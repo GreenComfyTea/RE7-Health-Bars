@@ -121,7 +121,7 @@
 
 <p align="center">
 	<a>
-		<img align="center" src="https://github.com/GreenComfyTea/RE7-Health-Bars/assets/30152047/a0a1f6a4-15f9-44ba-be72-6b1311edeeaf" />
+		<img align="center" src="https://github.com/GreenComfyTea/RE7-Health-Bars/assets/30152047/d01e72c7-3f64-4a9b-b20a-b95d90d098f0" />
 	</a>
 </p>
 
