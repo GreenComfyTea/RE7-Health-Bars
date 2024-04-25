@@ -41,8 +41,6 @@ local reframework = reframework;
 local os = os;
 
 this.enemy_list = {};
-this.enemy_game_object_list = {};
-
 local disable_is_in_sight_delay_seconds = 5;
 local health_update_delay_seconds = 1;
 
@@ -217,7 +215,6 @@ function this.update_game_object(enemy)
 	end
 
 	enemy.game_object = enemy_game_object;
-	this.enemy_game_object_list[enemy_game_object] = enemy;
 end
 
 function this.update_head_joint(enemy)
@@ -425,7 +422,6 @@ function this.on_destroy(enemy_action_controller)
 		return;
 	end
 
-	this.enemy_game_object_list[enemy.game_object] = nil;
 	this.enemy_list[enemy_action_controller] = nil;
 end
 
