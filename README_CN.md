@@ -121,20 +121,20 @@
 
 <p align="center">
 	<a>
-		<img align="center" src="https://github.com/GreenComfyTea/RE7-Health-Bars/assets/30152047/a0a1f6a4-15f9-44ba-be72-6b1311edeeaf" />
+		<img align="center" src="https://github.com/GreenComfyTea/RE7-Health-Bars/assets/30152047/d01e72c7-3f64-4a9b-b20a-b95d90d098f0" />
 	</a>
 </p>
 
 # 原始下载链接  
-* **[Nexus Mods](https://nexusmods.com/residentevil7/mods/132)**  
+* **[Nexus Mods](https://nexusmods.com/residentevil7/mods/132)**.  
 
 # 模组前置需求  
 1. **[REFramework](https://nexusmods.com/residentevil7/mods/80)** (**[Nightly](https://github.com/praydog/REFramework-nightly/releases)** v1.5.4或者更高版本);
 2. **[REFramework Direct2D](https://nexusmods.com/residentevil7/mods/131)** (v1.0.1或者更高版本).
 
 # 如何安装？:
-1. 先安装 **[REFramework](https://github.com/praydog/REFramework-nightly/releases)**;
-2. 再安装 **[REFramework Direct2D](https://nexusmods.com/residentevil7/mods/131)**;
+1. 先安装[REFramework](https://github.com/praydog/REFramework-nightly/releases);
+2. 再安装 [REFramework Direct2D](https://nexusmods.com/residentevil7/mods/131);
 
 >**:pushpin: Windows:** 工作正常。  
   
