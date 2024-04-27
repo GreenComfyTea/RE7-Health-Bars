@@ -105,6 +105,7 @@ function this.init()
 			max_distance = 30,
 
 			apply_time_duration_on_aiming = false,
+			apply_time_duration_on_guarding = false,
 			apply_time_duration_on_aim_target = false,
 			apply_time_duration_on_damage_dealt = false,
 			reset_time_duration_on_aim_target_for_everyone = true,

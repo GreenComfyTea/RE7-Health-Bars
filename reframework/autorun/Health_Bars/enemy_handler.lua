@@ -41,6 +41,8 @@ local reframework = reframework;
 local os = os;
 
 this.enemy_list = {};
+this.enemy_game_object_list = {};
+
 local disable_is_in_sight_delay_seconds = 5;
 local health_update_delay_seconds = 1;
 
@@ -110,6 +112,7 @@ function this.new(enemy_action_controller)
 	this.update_position(enemy);
 
 	this.enemy_list[enemy_action_controller] = enemy;
+	this.enemy_game_object_list[enemy.game_object] = enemy;
 	
 	return enemy;
 end
@@ -321,6 +324,7 @@ function this.draw_enemies()
 		local is_time_duration_on = false;
 
 		if cached_settings_config.apply_time_duration_on_aiming
+		or cached_settings_config.apply_time_duration_on_guarding
 		or cached_settings_config.apply_time_duration_on_aim_target
 		or cached_settings_config.apply_time_duration_on_damage_dealt then
 			if cached_settings_config.time_duration ~= 0 then
@@ -423,6 +427,7 @@ function this.on_destroy(enemy_action_controller)
 	end
 
 	this.enemy_list[enemy_action_controller] = nil;
+	this.enemy_game_object_list[enemy.game_object] = nil;
 end
 
 function this.on_damage(enemy_action_controller)

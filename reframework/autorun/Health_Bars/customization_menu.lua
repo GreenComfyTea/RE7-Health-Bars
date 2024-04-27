@@ -383,6 +383,10 @@ function this.draw()
 			cached_config.settings.apply_time_duration_on_aiming);
 		config_changed = config_changed or changed;
 
+		changed, cached_config.settings.apply_time_duration_on_guarding = imgui.checkbox(cached_language.apply_time_duration_on_guarding,
+			cached_config.settings.apply_time_duration_on_guarding);
+		config_changed = config_changed or changed;
+
 		changed, cached_config.settings.apply_time_duration_on_aim_target = imgui.checkbox(cached_language.apply_time_duration_on_aim_target,
 			cached_config.settings.apply_time_duration_on_aim_target);
 		config_changed = config_changed or changed;

@@ -95,6 +95,7 @@ this.default_language = {
 		max_distance = "Max Distance",
 
 		apply_time_duration_on_aiming = "Apply Time Duration on Aiming",
+		apply_time_duration_on_guarding = "Apply Time Duration on Guarding",
 		apply_time_duration_on_aim_target = "Apply Time Duration on Aim Target",
 		apply_time_duration_on_damage_dealt = "Apply Time Duration on Damage Dealt",
 		reset_time_duration_on_aim_target_for_everyone = "Reset Time Duration on Aim Target for Everyone",
