@@ -60,6 +60,8 @@ function this.new_timer(callback, cooldown_seconds, start_offset_seconds)
 	timer.last_trigger_time = os.clock() + start_offset_seconds;
 
 	this.timer_list[callback] =  timer;
+
+	return timer;
 end
 
 function this.new_delay_timer(callback, delay_seconds)
