@@ -51,7 +51,8 @@ local health_update_timer = nil;
 local enemy_action_controller_type_def = sdk.find_type_definition("app.EnemyActionController");
 local do_update_method = enemy_action_controller_type_def:get_method("doUpdate");
 local do_on_destroy_method = enemy_action_controller_type_def:get_method("doOnDestroy");
-local on_give_damage_method = enemy_action_controller_type_def:get_method("giveDamage");
+local give_damage_method = enemy_action_controller_type_def:get_method("giveDamage");
+local give_die_method = enemy_action_controller_type_def:get_method("giveDie");
 local get_enemy_damage_controller_method = enemy_action_controller_type_def:get_method("get_enemyDamageController");
 local get_game_object_method = enemy_action_controller_type_def:get_method("get_GameObject");
 local get_is_in_camera_method = enemy_action_controller_type_def:get_method("get_isInCameraLive");
@@ -141,13 +142,8 @@ end
 
 function this.update()
 	for enemy_action_controller, enemy in pairs(this.enemy_list) do
-		this.update_is_in_sight(enemy);
-	end
-end
-
-function this.update_all_health()
-	for enemy_action_controller, enemy in pairs(this.enemy_list) do
 		this.update_health(enemy);
+		this.update_is_in_sight(enemy);
 	end
 end
 
@@ -483,10 +479,6 @@ function this.init_module()
 	time = require("Health_Bars.time");
 	error_handler = require("Health_Bars.error_handler");
 
-	health_update_timer = time.new_timer(function ()
-		this.update_all_health();
-	end, health_update_delay_seconds, 0);
-
 	sdk.hook(do_update_method, function(args)
 		local enemy_action_controller = sdk.to_managed_object(args[2]);
 		this.on_update(enemy_action_controller);
@@ -503,10 +495,19 @@ function this.init_module()
 		return retval;
 	end);
 
-	sdk.hook(on_give_damage_method, function(args)
+	sdk.hook(give_damage_method, function(args)
 		local enemy_action_controller = sdk.to_managed_object(args[2]);
 
 		this.on_damage(enemy_action_controller);
+
+	end, function(retval)
+		return retval;
+	end);
+
+	sdk.hook(give_die_method, function(args)
+		local enemy_action_controller = sdk.to_managed_object(args[2]);
+
+		this.on_die(enemy_action_controller);
 
 	end, function(retval)
 		return retval;
