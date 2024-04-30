@@ -186,7 +186,7 @@ function this.update_aim_target()
 
 	local game_object = game_object_field:get_data(look_target_hit_result);
 	if game_object == nil then
-		error_handler.report("player_handler.update_aim_target", "No GameObject");
+		-- error_handler.report("player_handler.update_aim_target", "No GameObject");
 		return;
 	end
 
